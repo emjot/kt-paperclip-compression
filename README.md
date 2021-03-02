@@ -1,14 +1,16 @@
-# paperclip-compression
-[![Gem Version](https://emrekutlu-test-1.appspot.com/gems/paperclip-compression/version.png)](https://rubygems.org/gems/paperclip-compression) [![Code Climate](https://codeclimate.com/github/emrekutlu/paperclip-compression.png)](https://codeclimate.com/github/emrekutlu/paperclip-compression)
+# kt-paperclip-compression
 
-JPEG and PNG compression processor for Paperclip. Under the hood, [jpegtran](http://jpegclub.org) and [optipng](http://optipng.sourceforge.net/) libraries are used.
+JPEG and PNG compression processor for kt-paperclip. Under the hood, [jpegtran](http://jpegclub.org) and [optipng](http://optipng.sourceforge.net/) libraries are used.
+
+This fork of the original paperclip-compression gem works with
+kt-paperclip.
 
 ## Installation
 
 Add to your Gemfile.
 
 ````ruby
-gem 'paperclip-compression'
+gem 'kt-paperclip-compression'
 ````
 
 ## Usage
@@ -43,7 +45,7 @@ class User < ActiveRecord::Base
 end
 ````
 
-paperclip-compression uses binaries which are bundled with the gem. So you don't need to install anything. But if these binaries don't work for you, you can use your own.
+kt-paperclip-compression uses binaries which are bundled with the gem. So you don't need to install anything. But if these binaries don't work for you, you can use your own.
 
 ````ruby
 class User < ActiveRecord::Base
@@ -68,7 +70,7 @@ end
 ## Defaults
 Default options for jpegtran is <code>-copy none -optimize -perfect</code> and default options for optipng is <code>-o 5 -quiet</code>.
 
-You can use paperclip's default options to define global defaults for all your paperclip attachments. Use <code>compression</code> key.
+You can use kt-paperclip's default options to define global defaults for all your paperclip attachments. Use <code>compression</code> key.
 
 Example for config/application.rb:
 
@@ -91,4 +93,4 @@ Paperclip::Attachment.default_options[:compression] = { :png => false, :jpeg => 
 For more information about paperclip defaults: https://github.com/thoughtbot/paperclip#defaults
 
 ## License
-paperclip-compression is released under the [MIT License](https://github.com/emrekutlu/paperclip-compression/blob/master/LICENSE.txt).
+kt-paperclip-compression is released under the [MIT License](https://github.com/adamtao/kt-paperclip-compression/blob/master/LICENSE.txt).

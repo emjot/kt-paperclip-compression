@@ -1,4 +1,4 @@
-require 'paperclip'
+require 'kt-paperclip'
 require 'os'
 require 'paperclip-compression/paperclip/compression'
 require 'paperclip-compression/base'
@@ -8,6 +8,6 @@ require 'paperclip-compression/png'
 
 module PaperclipCompression
   def self.root
-    Gem::Specification.find_by_name('paperclip-compression').gem_dir
+    Gem::Specification.find_by_name('kt-paperclip-compression').gem_dir
   end
 end
