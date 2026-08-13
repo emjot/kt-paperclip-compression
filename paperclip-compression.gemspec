@@ -19,6 +19,6 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 3.2.0'
 
-  s.add_dependency 'kt-paperclip', '>= 6.4.1'
+  s.add_dependency 'kt-paperclip', '>= 7.3.0'
   s.add_dependency 'os', '~> 1.0', '>= 1.0.0'
 end

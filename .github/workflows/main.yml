@@ -36,8 +36,6 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Install shared-mime-info for mimemagic
-        run: brew install shared-mime-info
       - uses: actions/checkout@v7
       - name: Set up Ruby ${{ matrix.ruby }}
         uses: ruby/setup-ruby@v1
