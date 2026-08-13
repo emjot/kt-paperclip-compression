@@ -52,8 +52,8 @@ RSpec/HookArgument:
 # Configuration parameters: AssignmentOnly.
 RSpec/InstanceVariable:
   Exclude:
-    - 'spec/paperclip-compression/jpeg_spec.rb'
-    - 'spec/paperclip-compression/png_spec.rb'
+    - 'spec/paperclip_compression/jpeg_spec.rb'
+    - 'spec/paperclip_compression/png_spec.rb'
 
 # Offense count: 6
 # Configuration parameters: .
@@ -65,20 +65,11 @@ RSpec/MessageSpies:
 RSpec/MultipleExpectations:
   Max: 3
 
-# Offense count: 3
-# Configuration parameters: CustomTransform, IgnoreMethods, IgnoreMetadata, InflectorPath, EnforcedInflector.
-# SupportedInflectors: default, active_support
-RSpec/SpecFilePathFormat:
-  Exclude:
-    - 'spec/paperclip-compression/config_spec.rb'
-    - 'spec/paperclip-compression/jpeg_spec.rb'
-    - 'spec/paperclip-compression/png_spec.rb'
-
 # Offense count: 2
 RSpec/StubbedMock:
   Exclude:
-    - 'spec/paperclip-compression/jpeg_spec.rb'
-    - 'spec/paperclip-compression/png_spec.rb'
+    - 'spec/paperclip_compression/jpeg_spec.rb'
+    - 'spec/paperclip_compression/png_spec.rb'
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
