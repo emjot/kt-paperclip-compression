@@ -23,3 +23,12 @@ AllCops:
     - 'gemfiles/**/*.gemfile'
   NewCops: enable
   TargetRubyVersion: 3.2
+
+# These file names intentionally match the hyphenated gem name
+# ('kt-paperclip-compression') and the hyphenated 'lib/paperclip-compression'
+# directory, since RubyGems/Bundler require these entry-point files by that
+# exact name. Renaming them to snake_case would break `require`.
+Naming/FileName:
+  Exclude:
+    - 'lib/kt-paperclip-compression.rb'
+    - 'lib/paperclip-compression.rb'
