@@ -36,22 +36,6 @@ Naming/FileName:
     - 'lib/kt-paperclip-compression.rb'
     - 'lib/paperclip-compression.rb'
 
-# Offense count: 12
-# This cop supports unsafe autocorrection (--autocorrect-all).
-RSpec/BeEq:
-  Exclude:
-    - 'spec/paperclip-compression/config_spec.rb'
-
-# Offense count: 12
-# This cop supports unsafe autocorrection (--autocorrect-all).
-# Configuration parameters: SkipBlocks, EnforcedStyle, OnlyStaticConstants.
-# SupportedStyles: described_class, explicit
-RSpec/DescribedClass:
-  Exclude:
-    - 'spec/paperclip-compression/config_spec.rb'
-    - 'spec/paperclip-compression/jpeg_spec.rb'
-    - 'spec/paperclip-compression/png_spec.rb'
-
 # Offense count: 4
 # Configuration parameters: CountAsOne.
 RSpec/ExampleLength:

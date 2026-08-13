@@ -12,7 +12,7 @@ RSpec.describe PaperclipCompression::Png do
   end
 
   it 'processes the file via embedded binary' do
-    PaperclipCompression::Png.new(@file, false, whiny: true).make
+    described_class.new(@file, false, whiny: true).make
   end
 
   it 'does not process if command exists but config.process_file? is false' do
@@ -21,7 +21,7 @@ RSpec.describe PaperclipCompression::Png do
     )
 
     expect(Paperclip).not_to receive(:run)
-    PaperclipCompression::Png.new(@file, false).make
+    described_class.new(@file, false).make
   end
 
   it 'uses config command and options' do
@@ -37,6 +37,6 @@ RSpec.describe PaperclipCompression::Png do
     }
 
     expect(Paperclip).to receive(:run).with('abc', 'xyz -clobber :src_path -out :dst_path', anything)
-    PaperclipCompression::Png.new(@file, false, options).make
+    described_class.new(@file, false, options).make
   end
 end
