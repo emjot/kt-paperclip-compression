@@ -66,14 +66,6 @@ RSpec/MultipleExpectations:
   Max: 3
 
 # Offense count: 2
-# Configuration parameters: AllowedPatterns.
-# AllowedPatterns: ^expect_, ^assert_
-RSpec/NoExpectationExample:
-  Exclude:
-    - 'spec/paperclip-compression/jpeg_spec.rb'
-    - 'spec/paperclip-compression/png_spec.rb'
-
-# Offense count: 2
 RSpec/RepeatedExample:
   Exclude:
     - 'spec/paperclip-compression/config_spec.rb'

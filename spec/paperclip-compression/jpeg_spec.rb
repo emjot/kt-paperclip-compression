@@ -12,7 +12,10 @@ RSpec.describe PaperclipCompression::Jpeg do
   end
 
   it 'processes the file via embedded binary' do
-    described_class.new(@file, false, whiny: true).make
+    result = described_class.new(@file, false, whiny: true).make
+
+    expect(File.size(result.path)).to be > 0
+    expect(File.size(result.path)).to be <= File.size(@file.path)
   end
 
   it 'does not process if command exists but config.process_file? is false' do
