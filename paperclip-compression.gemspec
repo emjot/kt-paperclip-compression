@@ -19,9 +19,4 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'kt-paperclip', ">= 6.4.1"
   s.add_runtime_dependency 'os', '~> 1.0', '>= 1.0.0'
-
-  s.add_development_dependency 'bundler', '>= 2.2.10'
-  s.add_development_dependency 'rake', '~> 12.3', '>= 12.3.3'
-  s.add_development_dependency 'rspec', '3.7.0'
-  s.add_development_dependency 'guard-rspec', '4.7.3'
 end
