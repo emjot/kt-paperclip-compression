@@ -12,6 +12,7 @@
   * **Change:** removes the unmaintained `guard-rspec` gem and its `Guardfile`
   * **Change:** add rubocop
   * **Change:** update gemspec 
+  * Fix rubocop warnings
 
 ## emjot-2.0.0
   * **Security:** upgrades bundler dependency to >= 2.2.10

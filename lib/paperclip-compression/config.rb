@@ -1,6 +1,5 @@
 module PaperclipCompression
   class Config
-
     PROCESSOR_OPTIONS_KEY = :processor_options
     KEY = :compression
 
@@ -80,6 +79,5 @@ module PaperclipCompression
         @process_file = false
       end
     end
-
   end
 end

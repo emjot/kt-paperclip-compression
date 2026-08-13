@@ -1,6 +1,5 @@
 module PaperclipCompression
   class Jpeg < Base
-
     KEY = :jpeg
     JPEGTRAN_DEFAULT_OPTS = '-copy none -optimize -perfect'
 

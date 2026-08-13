@@ -1,6 +1,5 @@
 module PaperclipCompression
   class Png < Base
-
     KEY = :png
     OPTIPNG_DEFAULT_OPTS = '-o 5 -quiet'
 

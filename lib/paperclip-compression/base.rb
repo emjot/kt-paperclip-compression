@@ -1,10 +1,8 @@
 module PaperclipCompression
-
   ExitStatusError = defined?(Cocaine) ? Cocaine::ExitStatusError : Terrapin::ExitStatusError
   CommandNotFoundError = defined?(Cocaine) ? Cocaine::CommandNotFoundError : Terrapin::CommandNotFoundError
 
   class Base
-
     def initialize(file, first_processor)
       @file             = file
       current_extension = File.extname(file.path)
@@ -49,12 +47,12 @@ module PaperclipCompression
 
     def command_path(command)
       folder = if OS.osx?
-        'osx'
-      elsif OS.linux?
-        File.join('linux', 'x64')
-      elsif OS.windows?
-        'win64'
-      end
+                 'osx'
+               elsif OS.linux?
+                 File.join('linux', 'x64')
+               elsif OS.windows?
+                 'win64'
+               end
 
       command = "#{command}.exe" if OS.windows?
 

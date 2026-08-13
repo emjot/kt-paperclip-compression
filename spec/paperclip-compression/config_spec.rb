@@ -1,5 +1,4 @@
 RSpec.describe PaperclipCompression::Config do
-
   describe '#create_with_fallbacks' do
     it 'combines style, default and gem options' do
       type_key = :abc
@@ -152,5 +151,4 @@ RSpec.describe PaperclipCompression::Config do
     options = { PaperclipCompression::Config::KEY => { key => options } }
     PaperclipCompression::Config.new(options, key, fallback, whiny)
   end
-
 end

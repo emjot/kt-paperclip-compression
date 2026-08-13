@@ -1,5 +1,4 @@
 RSpec.describe PaperclipCompression::Jpeg do
-
   before(:each) do
     path = File.join(PaperclipCompression.root, 'spec', 'support', 'test.jpg')
     @file = File.new(path, 'rb')
@@ -38,5 +37,4 @@ RSpec.describe PaperclipCompression::Jpeg do
     expect(Paperclip).to receive(:run).with('abc', 'xyz :src_path > :dst_path', anything)
     PaperclipCompression::Jpeg.new(@file, false, options).make
   end
-
 end

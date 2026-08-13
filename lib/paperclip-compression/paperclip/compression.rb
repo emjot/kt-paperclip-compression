@@ -1,7 +1,6 @@
 module Paperclip
   # Compresses the JPEG and PNG files
   class Compression < Processor
-
     def make
       case content_type
       when 'image/jpeg' then make_jpeg
@@ -28,6 +27,5 @@ module Paperclip
     def make_png
       PaperclipCompression::Png.make(@file, first_processor?, @options)
     end
-
   end
 end
