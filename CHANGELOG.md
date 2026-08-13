@@ -7,6 +7,9 @@
   * **Bug Fix:** `bin/win64/optipng.exe` didn't exist in the repo at all — PNG compression on 64-bit Windows always failed with `CommandNotFoundError`. Now bundled.
   * **Bug Fix:** `command_path` in `lib/paperclip-compression/base.rb` never appended `.exe` on Windows, so it resolved to a nonexistent file (e.g. `bin/win64/jpegtran` instead of `bin/win64/jpegtran.exe`) — meaning JPEG compression on Windows never actually worked either. Fixed, and a `windows-latest` CI job was added so this doesn't regress silently again.
   * **Change:** bumps `actions/checkout` to `v7` in all CI jobs (was `v2`/`master`).
+  * **Change:** update rake dependency to ~> 13.4
+  * **Change:** removes the unmaintained `guard-rspec` gem and its `Guardfile`
+  * **Change:** add rubocop
 
 ## emjot-2.0.0
   * **Security:** upgrades bundler dependency to >= 2.2.10
