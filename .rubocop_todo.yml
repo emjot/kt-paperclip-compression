@@ -6,26 +6,9 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 2
-# This cop supports safe autocorrection (--autocorrect).
-Gemspec/AddRuntimeDependency:
-  Exclude:
-    - 'paperclip-compression.gemspec'
-
-# Offense count: 1
-# This cop supports safe autocorrection (--autocorrect).
-Gemspec/DeprecatedAttributeAssignment:
-  Exclude:
-    - 'paperclip-compression.gemspec'
-
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 Gemspec/RequireMFA:
-  Exclude:
-    - 'paperclip-compression.gemspec'
-
-# Offense count: 1
-Gemspec/RequiredRubyVersion:
   Exclude:
     - 'paperclip-compression.gemspec'
 
@@ -34,12 +17,6 @@ Gemspec/RequiredRubyVersion:
 Layout/ElseAlignment:
   Exclude:
     - 'lib/paperclip-compression/base.rb'
-
-# Offense count: 1
-# This cop supports safe autocorrection (--autocorrect).
-Layout/EmptyLineAfterMagicComment:
-  Exclude:
-    - 'paperclip-compression.gemspec'
 
 # Offense count: 6
 # This cop supports safe autocorrection (--autocorrect).
@@ -208,18 +185,6 @@ Style/Documentation:
     - 'lib/paperclip-compression/jpeg.rb'
     - 'lib/paperclip-compression/png.rb'
 
-# Offense count: 1
-# This cop supports safe autocorrection (--autocorrect).
-Style/Encoding:
-  Exclude:
-    - 'paperclip-compression.gemspec'
-
-# Offense count: 1
-# This cop supports safe autocorrection (--autocorrect).
-Style/ExpandPathArguments:
-  Exclude:
-    - 'paperclip-compression.gemspec'
-
 # Offense count: 14
 # This cop supports unsafe autocorrection (--autocorrect-all).
 # Configuration parameters: EnforcedStyle.
@@ -235,7 +200,6 @@ Style/FrozenStringLiteralComment:
     - 'lib/paperclip-compression/jpeg.rb'
     - 'lib/paperclip-compression/paperclip/compression.rb'
     - 'lib/paperclip-compression/png.rb'
-    - 'paperclip-compression.gemspec'
     - 'spec/paperclip-compression/config_spec.rb'
     - 'spec/paperclip-compression/jpeg_spec.rb'
     - 'spec/paperclip-compression/png_spec.rb'
@@ -306,14 +270,6 @@ Style/SafeNavigation:
 Style/SignalException:
   Exclude:
     - 'lib/paperclip-compression/base.rb'
-
-# Offense count: 1
-# This cop supports safe autocorrection (--autocorrect).
-# Configuration parameters: EnforcedStyle, ConsistentQuotesInMultiline.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiterals:
-  Exclude:
-    - 'paperclip-compression.gemspec'
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).

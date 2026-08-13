@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+  * **Change:** min. required ruby version is now 3.2
   * **Change:** drops support for EOL 32-bit platforms (macOS 32bit, Linux x86, Windows win32). None of these are usable on current OS releases (Apple removed 32-bit app support entirely in Catalina; mainstream Linux distros and Windows are 64-bit only now). `bin/osx/64bit/` is renamed to `bin/osx/` since it's the only remaining macOS variant, and `command_path` in `lib/paperclip-compression/base.rb` no longer branches on OS bit-width/version.
   * **Change:** rebuilds every bundled `jpegtran`/`optipng` binary (macOS universal arm64+x86_64, Linux x64, Windows x64) as fully static executables against current upstream — libjpeg-turbo 3.2.0 and OptiPNG 7.9.1 — replacing binaries that ranged from 2014–2017-era to outright broken. See the "Supported platforms & bundled binaries" section in the README.
   * **Bug Fix:** the macOS `jpegtran` binary was dynamically linked against `@loader_path/libjpeg.dylib`, but that dylib was never committed, so it crashed on every current macOS (`Library not loaded: @loader_path/libjpeg.dylib`). Now statically linked.
@@ -10,6 +11,7 @@
   * **Change:** update rake dependency to ~> 13.4
   * **Change:** removes the unmaintained `guard-rspec` gem and its `Guardfile`
   * **Change:** add rubocop
+  * **Change:** update gemspec 
 
 ## emjot-2.0.0
   * **Security:** upgrades bundler dependency to >= 2.2.10
