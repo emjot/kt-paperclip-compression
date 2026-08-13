@@ -76,5 +76,5 @@ module PaperclipCompression
   end
 
   # Informs developers when a method is intended to be defined in # sub-classes.
-  class MustImplementInSubClassesException < Exception; end
+  class MustImplementInSubClassesException < StandardError; end
 end

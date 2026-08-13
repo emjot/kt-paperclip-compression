@@ -11,7 +11,8 @@
   * **Change:** update rake dependency to ~> 13.4
   * **Change:** removes the unmaintained `guard-rspec` gem and its `Guardfile`
   * **Change:** add rubocop
-  * **Change:** update gemspec 
+  * **Change:** update gemspec
+  * **Change:** `MustImplementInSubClassesException` now inherits from `StandardError` instead of from `Exception`
   * Fix rubocop warnings
 
 ## emjot-2.0.0

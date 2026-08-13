@@ -13,14 +13,6 @@ Gemspec/RequireMFA:
     - 'paperclip-compression.gemspec'
 
 # Offense count: 1
-# This cop supports unsafe autocorrection (--autocorrect-all).
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: standard_error, runtime_error
-Lint/InheritException:
-  Exclude:
-    - 'lib/paperclip-compression/base.rb'
-
-# Offense count: 1
 # Configuration parameters: AllowedMethods, AllowedPatterns.
 Metrics/CyclomaticComplexity:
   Max: 8
