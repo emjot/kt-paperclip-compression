@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe PaperclipCompression::Config do
   describe '#create_with_fallbacks' do
     it 'combines style, default and gem options' do

@@ -78,7 +78,7 @@ module YourApp
   class Application < Rails::Application
     # Other code...
 
-    config.paperclip_defaults = { :compression => { :png => false, :jpeg => '-optimize' } }
+    config.paperclip_defaults = { compression: { png: false, jpeg: '-optimize' } }
   end
 end
 ````
@@ -86,7 +86,7 @@ end
 Example for Rails initializer:
 
 ````ruby
-Paperclip::Attachment.default_options[:compression] = { :png => false, :jpeg => '-optimize' }
+Paperclip::Attachment.default_options[:compression] = { png: false, jpeg: '-optimize' }
 ````
 
 For more information about paperclip defaults: https://github.com/thoughtbot/paperclip#defaults

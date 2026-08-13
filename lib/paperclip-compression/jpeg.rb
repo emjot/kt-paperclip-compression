@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PaperclipCompression
   class Jpeg < Base
     KEY = :jpeg
@@ -9,13 +11,11 @@ module PaperclipCompression
     end
 
     def make
-      begin
-        @config.process_file? ? process_file : unprocessed_tempfile
-      rescue ExitStatusError
-        raise Paperclip::Error, "JPEGTRAN : There was an error processing #{@basename}" if @config.whiny
-      rescue CommandNotFoundError
-        raise Paperclip::Errors::CommandNotFoundError.new("Could not run 'jpegtran'. Please install jpegtran.")
-      end
+      @config.process_file? ? process_file : unprocessed_tempfile
+    rescue ExitStatusError
+      raise Paperclip::Error, "JPEGTRAN : There was an error processing #{@basename}" if @config.whiny
+    rescue CommandNotFoundError
+      raise Paperclip::Errors::CommandNotFoundError, "Could not run 'jpegtran'. Please install jpegtran."
     end
 
     private

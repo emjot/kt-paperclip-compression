@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'kt-paperclip'
 require 'os'
 require 'paperclip-compression/paperclip/compression'

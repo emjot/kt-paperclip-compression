@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Paperclip
   # Compresses the JPEG and PNG files
   class Compression < Processor

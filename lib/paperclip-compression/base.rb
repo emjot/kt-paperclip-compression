@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PaperclipCompression
   ExitStatusError = defined?(Cocaine) ? Cocaine::ExitStatusError : Terrapin::ExitStatusError
   CommandNotFoundError = defined?(Cocaine) ? Cocaine::CommandNotFoundError : Terrapin::CommandNotFoundError
@@ -62,8 +64,8 @@ module PaperclipCompression
     private
 
     def compress
-      fail MustImplementInSubClassesException,
-           'compress is overridden on a per compressor basis.'
+      raise MustImplementInSubClassesException,
+            'compress is overridden on a per compressor basis.'
     end
 
     def first_processor?
