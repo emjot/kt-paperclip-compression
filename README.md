@@ -2,15 +2,14 @@
 
 JPEG and PNG compression processor for kt-paperclip. Under the hood, [jpegtran](http://jpegclub.org) and [optipng](http://optipng.sourceforge.net/) libraries are used.
 
-This fork of the original paperclip-compression gem works with
-kt-paperclip.
+This fork is a fork of the [kt-paperclip-compression](https://github.com/adamtao/kt-paperclip-compression) gem. Since we still use it in a project, we're trying to maintain it here. If there's a need, please create an issue; We can discuss re-releasing the gem under a new name. For now, we just have the `emjot-x.x.x` tags without actual gem versioning/releases (usage directly from github). We do track changes in the `CHANGELOG.md`.
 
 ## Installation
 
 Add to your Gemfile.
 
 ````ruby
-gem 'kt-paperclip-compression'
+gem 'kt-paperclip-compression', github: 'emjot/kt-paperclip-compression', tag: 'emjot-2.0.0'
 ````
 
 ## Usage
