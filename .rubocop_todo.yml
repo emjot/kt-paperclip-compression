@@ -65,11 +65,6 @@ RSpec/MessageSpies:
 RSpec/MultipleExpectations:
   Max: 3
 
-# Offense count: 2
-RSpec/RepeatedExample:
-  Exclude:
-    - 'spec/paperclip-compression/config_spec.rb'
-
 # Offense count: 3
 # Configuration parameters: CustomTransform, IgnoreMethods, IgnoreMetadata, InflectorPath, EnforcedInflector.
 # SupportedInflectors: default, active_support

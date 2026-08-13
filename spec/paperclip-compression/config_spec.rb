@@ -137,7 +137,7 @@ RSpec.describe PaperclipCompression::Config do
 
   it 'does not process when KEY is nil' do
     fallback = new_config({ command: 'def', options: 'opts' }, :abc, nil, false)
-    config = described_class.new({ PaperclipCompression::Config::KEY => false }, :abc, fallback, false)
+    config = described_class.new({ PaperclipCompression::Config::KEY => nil }, :abc, fallback, false)
 
     expect(config.process_file?).to be(false)
     expect(config.command).to eq('def')
