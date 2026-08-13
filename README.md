@@ -91,5 +91,20 @@ Paperclip::Attachment.default_options[:compression] = { :png => false, :jpeg => 
 
 For more information about paperclip defaults: https://github.com/thoughtbot/paperclip#defaults
 
+## Supported platforms & bundled binaries
+Prebuilt, statically-linked `jpegtran`/`optipng` binaries are bundled for:
+
+* macOS (universal binary: arm64 + x86_64)
+* Linux (x64)
+* Windows (x64)
+
+32-bit platforms (macOS 32-bit, Linux x86, Windows win32) are no longer
+supported, since they're EOL/unsupported on current OS releases.
+
+Bundled versions:
+
+* [libjpeg-turbo](https://libjpeg-turbo.org/) 3.2.0 (`jpegtran`) — IJG, Zlib, and BSD-3-Clause licenses
+* [OptiPNG](https://optipng.sourceforge.net/) 7.9.1 (`optipng`) — Zlib license
+
 ## License
 kt-paperclip-compression is released under the [MIT License](https://github.com/adamtao/kt-paperclip-compression/blob/master/LICENSE.txt).

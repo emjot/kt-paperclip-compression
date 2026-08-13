@@ -47,3 +47,22 @@ jobs:
         run: bundle install
       - name: Run tests
         run: bundle exec rspec
+
+  test-windows:
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby: [3.2]
+
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby ${{ matrix.ruby }}
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+      - name: Install dependencies
+        run: bundle install
+      - name: Run tests
+        run: bundle exec rspec

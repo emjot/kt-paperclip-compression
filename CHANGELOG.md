@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+  * **Change:** drops support for EOL 32-bit platforms (macOS 32bit, Linux x86, Windows win32). None of these are usable on current OS releases (Apple removed 32-bit app support entirely in Catalina; mainstream Linux distros and Windows are 64-bit only now). `bin/osx/64bit/` is renamed to `bin/osx/` since it's the only remaining macOS variant, and `command_path` in `lib/paperclip-compression/base.rb` no longer branches on OS bit-width/version.
+  * **Change:** rebuilds every bundled `jpegtran`/`optipng` binary (macOS universal arm64+x86_64, Linux x64, Windows x64) as fully static executables against current upstream — libjpeg-turbo 3.2.0 and OptiPNG 7.9.1 — replacing binaries that ranged from 2014–2017-era to outright broken. See the "Supported platforms & bundled binaries" section in the README.
+  * **Bug Fix:** the macOS `jpegtran` binary was dynamically linked against `@loader_path/libjpeg.dylib`, but that dylib was never committed, so it crashed on every current macOS (`Library not loaded: @loader_path/libjpeg.dylib`). Now statically linked.
+  * **Bug Fix:** `bin/win64/optipng.exe` didn't exist in the repo at all — PNG compression on 64-bit Windows always failed with `CommandNotFoundError`. Now bundled.
+  * **Bug Fix:** `command_path` in `lib/paperclip-compression/base.rb` never appended `.exe` on Windows, so it resolved to a nonexistent file (e.g. `bin/win64/jpegtran` instead of `bin/win64/jpegtran.exe`) — meaning JPEG compression on Windows never actually worked either. Fixed, and a `windows-latest` CI job was added so this doesn't regress silently again.
+
 ## emjot-2.0.0
   * **Security:** upgrades bundler dependency to >= 2.2.10
   * **Feature:** adds Ruby 2.6 & 2.7 support ([Soren Hedegaard](https://github.com/sorenwiz))

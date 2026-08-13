@@ -48,13 +48,15 @@ module PaperclipCompression
     end
 
     def command_path(command)
-     folder = if OS.osx?
-        File.join('osx', catalina? ? '64bit' : '32bit')
+      folder = if OS.osx?
+        'osx'
       elsif OS.linux?
-        File.join('linux', OS.bits.eql?(64) ? 'x64' : 'x86')
+        File.join('linux', 'x64')
       elsif OS.windows?
-        OS.bits.eql?(64) ? 'win64' : 'win32'
+        'win64'
       end
+
+      command = "#{command}.exe" if OS.windows?
 
       File.join(PaperclipCompression.root, 'bin', folder, command)
     end
@@ -72,11 +74,6 @@ module PaperclipCompression
 
     def copy_to_tempfile
       FileUtils.cp(@src_path, @dst_path)
-    end
-
-    def catalina?
-      major = OS.host_os.match(/darwin(\d+)/)[1].to_i
-      major >= 19
     end
   end
 
