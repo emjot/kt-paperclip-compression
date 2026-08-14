@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## emjot-3.0.0 (August 14, 2026)
   * **Dependencies**
     * **Change:** min. required ruby version is now 3.2
     * **Change:** CI now also tests against Ruby 3.3, 3.4, and 4.0 (3.2 and 4.0 on macOS/Windows; the full range on Linux)

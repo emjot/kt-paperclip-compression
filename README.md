@@ -9,7 +9,7 @@ This fork is a fork of the [kt-paperclip-compression](https://github.com/adamtao
 Add to your Gemfile.
 
 ````ruby
-gem 'kt-paperclip-compression', github: 'emjot/kt-paperclip-compression', tag: 'emjot-2.0.0'
+gem 'kt-paperclip-compression', github: 'emjot/kt-paperclip-compression', tag: 'emjot-3.0.0'
 ````
 
 ## Usage
