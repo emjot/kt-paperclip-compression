@@ -1,10 +1,10 @@
-module PaperclipCompression
+# frozen_string_literal: true
 
+module PaperclipCompression
   ExitStatusError = defined?(Cocaine) ? Cocaine::ExitStatusError : Terrapin::ExitStatusError
   CommandNotFoundError = defined?(Cocaine) ? Cocaine::CommandNotFoundError : Terrapin::CommandNotFoundError
 
   class Base
-
     def initialize(file, first_processor)
       @file             = file
       current_extension = File.extname(file.path)
@@ -48,13 +48,15 @@ module PaperclipCompression
     end
 
     def command_path(command)
-     folder = if OS.osx?
-        File.join('osx', catalina? ? '64bit' : '32bit')
-      elsif OS.linux?
-        File.join('linux', OS.bits.eql?(64) ? 'x64' : 'x86')
-      elsif OS.windows?
-        OS.bits.eql?(64) ? 'win64' : 'win32'
-      end
+      folder = if OS.osx?
+                 'osx'
+               elsif OS.linux?
+                 File.join('linux', 'x64')
+               elsif OS.windows?
+                 'win64'
+               end
+
+      command = "#{command}.exe" if OS.windows?
 
       File.join(PaperclipCompression.root, 'bin', folder, command)
     end
@@ -62,8 +64,8 @@ module PaperclipCompression
     private
 
     def compress
-      fail MustImplementInSubClassesException,
-           'compress is overridden on a per compressor basis.'
+      raise MustImplementInSubClassesException,
+            'compress is overridden on a per compressor basis.'
     end
 
     def first_processor?
@@ -73,13 +75,8 @@ module PaperclipCompression
     def copy_to_tempfile
       FileUtils.cp(@src_path, @dst_path)
     end
-
-    def catalina?
-      major = OS.host_os.match(/darwin(\d+)/)[1].to_i
-      major >= 19
-    end
   end
 
   # Informs developers when a method is intended to be defined in # sub-classes.
-  class MustImplementInSubClassesException < Exception; end
+  class MustImplementInSubClassesException < StandardError; end
 end

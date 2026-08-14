@@ -11,12 +11,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby: [2.3, 2.4, 2.5, 2.6, 2.7]
+        ruby: [3.2, 3.3, 3.4, 4.0]
 
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
       - name: Set up Ruby ${{ matrix.ruby }}
         uses: ruby/setup-ruby@v1
         with:
@@ -31,14 +31,31 @@ jobs:
       fail-fast: false
       matrix:
         os: [macos-latest]
-        ruby: [2.3, 2.4, 2.5, 2.6, 2.7]
+        ruby: [3.2, 4.0]
 
     runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Install shared-mime-info for mimemagic
-        run: brew install shared-mime-info
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
+      - name: Set up Ruby ${{ matrix.ruby }}
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+      - name: Install dependencies
+        run: bundle install
+      - name: Run tests
+        run: bundle exec rspec
+
+  test-windows:
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby: [3.2, 4.0]
+
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v7
       - name: Set up Ruby ${{ matrix.ruby }}
         uses: ruby/setup-ruby@v1
         with:

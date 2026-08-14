@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 module PaperclipCompression
   class Config
-
     PROCESSOR_OPTIONS_KEY = :processor_options
     KEY = :compression
 
@@ -46,23 +47,21 @@ module PaperclipCompression
       end
     end
 
-    def whiny
-      @whiny
-    end
+    attr_reader :whiny
 
     private
 
     def parse_options(options, type_key)
-      if options && options.has_key?(KEY)
-        compression_opts = options[KEY]
+      return unless options&.key?(KEY)
 
-        if compression_opts.eql?(true)
-          @process_file = true
-        elsif compression_opts.eql?(false) || compression_opts.eql?(nil)
-          @process_file = false
-        elsif compression_opts.is_a?(Hash) && compression_opts.has_key?(type_key)
-          parse_type_options(compression_opts[type_key])
-        end
+      compression_opts = options[KEY]
+
+      if compression_opts.eql?(true)
+        @process_file = true
+      elsif compression_opts.eql?(false) || compression_opts.eql?(nil)
+        @process_file = false
+      elsif compression_opts.is_a?(Hash) && compression_opts.key?(type_key)
+        parse_type_options(compression_opts[type_key])
       end
     end
 
@@ -73,13 +72,12 @@ module PaperclipCompression
         if type_opts.is_a?(String)
           @options = type_opts
         elsif type_opts.is_a?(Hash)
-          @command = type_opts[:command] if type_opts.has_key?(:command)
-          @options = type_opts[:options] if type_opts.has_key?(:options)
+          @command = type_opts[:command] if type_opts.key?(:command)
+          @options = type_opts[:options] if type_opts.key?(:options)
         end
       else
         @process_file = false
       end
     end
-
   end
 end

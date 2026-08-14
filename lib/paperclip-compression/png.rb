@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 module PaperclipCompression
   class Png < Base
-
     KEY = :png
     OPTIPNG_DEFAULT_OPTS = '-o 5 -quiet'
 
@@ -10,13 +11,11 @@ module PaperclipCompression
     end
 
     def make
-      begin
-        @config.process_file? ? process_file : unprocessed_tempfile
-      rescue ExitStatusError
-        raise Paperclip::Error, "OPTIPNG : There was an error processing #{@basename}" if @config.whiny
-      rescue CommandNotFoundError
-        raise Paperclip::Errors::CommandNotFoundError.new("Could not run 'optipng'. Please install optipng.")
-      end
+      @config.process_file? ? process_file : unprocessed_tempfile
+    rescue ExitStatusError
+      raise Paperclip::Error, "OPTIPNG : There was an error processing #{@basename}" if @config.whiny
+    rescue CommandNotFoundError
+      raise Paperclip::Errors::CommandNotFoundError, "Could not run 'optipng'. Please install optipng."
     end
 
     private
